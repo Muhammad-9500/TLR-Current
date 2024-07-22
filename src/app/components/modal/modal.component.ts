@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FooterComponent } from '../footer/footer.component';
+import { PreloaderComponent } from '../preloader/preloader.component';
 import { HeaderMenuComponent } from '../header-menu/header-menu.component';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 
@@ -8,7 +9,7 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
   templateUrl: './modal.component.html',
   styleUrl: './modal.component.css',
   standalone: true,
-  imports:[HeaderMenuComponent,SidebarComponent,FooterComponent]
+  imports:[PreloaderComponent,HeaderMenuComponent,SidebarComponent,FooterComponent]
 })
 export class ModalComponent {
 

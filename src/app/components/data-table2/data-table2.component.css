@@ -1,0 +1,35 @@
+.attendance-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    border: 1px solid #ddd; /* add a border around the table */
+  }
+  
+  .attendance-table th, .attendance-table td {
+    padding: 10px;
+    border: 1px solid #ddd; /* add a border around each cell */
+    text-align: center;
+  }
+  
+  .attendance-table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+  }
+  
+  .attendance-table td {
+    vertical-align: middle;
+  }
+  
+  .attendance-table .mat-icon {
+    font-size: 18px;
+    margin: 0 2px;
+    color: #666;
+  }
+  
+  .attendance-table .mat-icon.check_circle_outline {
+    color: #2ecc71; /* green */
+  }
+  
+  .attendance-table .mat-icon.cancel {
+    color: #e74c3c; /* red */
+  }

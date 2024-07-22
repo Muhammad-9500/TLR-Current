@@ -1,9 +1,9 @@
 <!-- Preloader Start Here -->
-<div id="preloader"></div>
+<app-preloader ngSKipHydration></app-preloader>
 <!-- Preloader End Here -->
 <div id="wrapper" class="wrapper bg-ash">
         <!-- Header Menu Area Start Here -->
-    <app-header-menu></app-header-menu>
+    <app-header-menu ngSkipHydration></app-header-menu>
     <!-- Header Menu Area End Here -->
     <!-- Page Area Start Here -->
     <div class="dashboard-page-one">
@@ -52,17 +52,23 @@
                             </div>
                             <div class="col-xl-3 col-lg-6 col-12 form-group">
                                 <label>Gender *</label>
-                                <select class="select2">
+                                <!-- <select class="select2">
                                     <option value="">Please Select Gender *</option>
                                     <option value="1">Male</option>
                                     <option value="2">Female</option>
                                     <option value="3">Others</option>
-                                </select>
+                                </select> -->
+                                <app-select-drop-down 
+                                    [options]="gender" 
+                                    [selectedValue]="selectedOption" 
+                                    (selectionChange)="handleAllSelectionChange($event)">
+                                </app-select-drop-down>
                             </div>
                             <div class="col-xl-3 col-lg-6 col-12 form-group">
                                 <label>Date Of Birth *</label>
-                                <input type="text" placeholder="dd/mm/yyyy" class="form-control air-datepicker">
-                                <i class="far fa-calendar-alt"></i>
+                                <!-- <input type="text" placeholder="dd/mm/yyyy" class="form-control air-datepicker">
+                                <i class="far fa-calendar-alt"></i> -->
+                                <app-datepicker></app-datepicker>
                             </div>
                             <div class="col-xl-3 col-lg-6 col-12 form-group">
                                 <label>ID No</label>
@@ -70,7 +76,7 @@
                             </div>
                             <div class="col-xl-3 col-lg-6 col-12 form-group">
                                 <label>Blood Group *</label>
-                                <select class="select2">
+                                <!-- <select class="select2">
                                     <option value="">Please Select Group *</option>
                                     <option value="1">A+</option>
                                     <option value="2">A-</option>
@@ -78,18 +84,28 @@
                                     <option value="3">B-</option>
                                     <option value="3">O+</option>
                                     <option value="3">O-</option>
-                                </select>
+                                </select> -->
+                                <app-select-drop-down 
+                                    [options]="bloodGroup" 
+                                    [selectedValue]="selectedOption" 
+                                    (selectionChange)="handleAllSelectionChange($event)">
+                                </app-select-drop-down>
                             </div>
                             <div class="col-xl-3 col-lg-6 col-12 form-group">
                                 <label>Religion *</label>
-                                <select class="select2">
+                                <!-- <select class="select2">
                                     <option value="">Please Select Religion *</option>
                                     <option value="1">Islam</option>
                                     <option value="2">Hindu</option>
                                     <option value="3">Christian</option>
                                     <option value="3">Buddish</option>
                                     <option value="3">Others</option>
-                                </select>
+                                </select> -->
+                                <app-select-drop-down 
+                                    [options]="religion" 
+                                    [selectedValue]="selectedOption" 
+                                    (selectionChange)="handleAllSelectionChange($event)">
+                                </app-select-drop-down>
                             </div>
                             <div class="col-xl-3 col-lg-6 col-12 form-group">
                                 <label>E-Mail</label>
@@ -97,7 +113,7 @@
                             </div>
                             <div class="col-xl-3 col-lg-6 col-12 form-group">
                                 <label>Class *</label>
-                                <select class="select2">
+                                <!-- <select class="select2">
                                     <option value="">Please Select Class *</option>
                                     <option value="1">Play</option>
                                     <option value="2">Nursery</option>
@@ -106,18 +122,28 @@
                                     <option value="3">Three</option>
                                     <option value="3">Four</option>
                                     <option value="3">Five</option>
-                                </select>
+                                </select> -->
+                                <app-select-drop-down 
+                                    [options]="class" 
+                                    [selectedValue]="selectedOption" 
+                                    (selectionChange)="handleAllSelectionChange($event)">
+                                </app-select-drop-down>
                             </div>
                             <div class="col-xl-3 col-lg-6 col-12 form-group">
                                 <label>Section *</label>
-                                <select class="select2">
+                                <!-- <select class="select2">
                                     <option value="">Please Select Section *</option>
                                     <option value="1">Pink</option>
                                     <option value="2">Blue</option>
                                     <option value="3">Bird</option>
                                     <option value="3">Rose</option>
                                     <option value="3">Red</option>
-                                </select>
+                                </select> -->
+                                <app-select-drop-down 
+                                    [options]="sections" 
+                                    [selectedValue]="selectedOption" 
+                                    (selectionChange)="handleAllSelectionChange($event)">
+                                </app-select-drop-down>
                             </div>
                             <div class="col-xl-3 col-lg-6 col-12 form-group">
                                 <label>Address</label>

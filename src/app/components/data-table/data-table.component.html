@@ -1,0 +1,43 @@
+<div class="table-responsive table-striped student-table-box">
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+    <ng-container *ngFor="let column of columns" [matColumnDef]="column.key">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        <mat-checkbox *ngIf="column.key === 'select'" (change)="toggleAllRows($event)" [checked]="isAllSelected()"></mat-checkbox>
+        <span *ngIf="column.key !== 'select'">{{ column.header }}</span>
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <mat-checkbox *ngIf="column.key === 'select'" (click)="$event.stopPropagation()" (change)="toggleRow(element)" [checked]="selection.isSelected(element)"></mat-checkbox>
+        <span *ngIf="column.key !== 'select' && column.key !== 'photo' && column.key !== 'status'">{{ element[column.key] }}</span>
+        <img *ngIf="column.key === 'photo'" [src]="element.photo" alt="student" style="width: 40px; height: 40px;">
+        <button *ngIf="column.key === 'status'" mat-button [ngClass]="element.status === 'Paid' ? 'paid' : 'unpaid'">
+          {{ element.status }}
+        </button>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="closeAction(element)">
+            <mat-icon style="color: #ff4500;">close</mat-icon> Close
+          </button>
+          <button mat-menu-item (click)="editAction(element)">
+            <mat-icon style="color: #03c03c;">edit</mat-icon> Edit
+          </button>
+          <button mat-menu-item (click)="refreshAction(element)">
+            <mat-icon style="color: #ffa500;">refresh</mat-icon> Refresh
+          </button>
+        </mat-menu>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>

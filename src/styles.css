@@ -58,6 +58,8 @@ Version: 1.0
 /*=======================================================================
 [01] TYPOGRAPHY
 =========================================================================*/
+/* @import "~@angular/material/prebuilt-themes/indigo-pink.css"; */
+
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900);
 html {
   height: 100%;
@@ -5085,4 +5087,24 @@ ul {
 }
 .text-orange-red {
   color: #ff0000;
+}
+
+.fc .fc-button {
+  border-radius: 15px; /* Rounded corners */
+  background-color: #f50057; /* Button background color */
+  color: #ffffff; /* Button text color */
+  border: none; /* Remove border if desired */
+  padding: 10px 20px; /* Adjust padding for button size */
+  margin: 3px; /* Add margin for spacing between buttons */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+.fc .fc-button:hover {
+  background-color: #f50257; /* Hover background color */
+}
+
+.fc .fc-toolbar-title {
+  font-size: 1.2em; /* Adjust font size as needed */
 }

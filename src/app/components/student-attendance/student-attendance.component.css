@@ -1,0 +1,31 @@
+.table-container {
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  th {
+    background-color: #f0f0f0;
+  }
+  
+  td {
+    padding: 10px;
+  }
+  
+  td:not(:first-child) {
+    padding-left: 20px;
+  }
+  
+  .mat-icon {
+    font-size: 18px;
+    font-weight: bold;
+  }

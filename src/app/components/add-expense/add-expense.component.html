@@ -1,9 +1,9 @@
 <!-- Preloader Start Here -->
-<div id="preloader"></div>
+<app-preloader ngSKipHydration></app-preloader>
 <!-- Preloader End Here -->
 <div id="wrapper" class="wrapper bg-ash">
         <!-- Header Menu Area Start Here -->
-        <app-header-menu></app-header-menu>
+        <app-header-menu ngSkipHydration></app-header-menu>
     <!-- Header Menu Area End Here -->
     <!-- Page Area Start Here -->
     <div class="dashboard-page-one">
@@ -52,14 +52,19 @@
                             </div>
                             <div class="col-xl-3 col-lg-6 col-12 form-group">
                                 <label>Expense Type *</label>
-                                <select class="select2">
+                                <!-- <select class="select2">
                                     <option value="">Please Select</option>
                                     <option value="1">Salary</option>
                                     <option value="2">Transport</option>
                                     <option value="3">Maintanance</option>
                                     <option value="3">Purchase</option>
                                     <option value="3">Utilities</option>
-                                </select>
+                                </select> -->
+                                <app-select-drop-down 
+                                    [options]="expenseType" 
+                                    [selectedValue]="selectedOption" 
+                                    (selectionChange)="handleAllSelectionChange($event)">
+                                </app-select-drop-down>
                             </div>
                             <div class="col-xl-3 col-lg-6 col-12 form-group">
                                 <label>Amount *</label>
@@ -75,16 +80,22 @@
                             </div>
                             <div class="col-xl-3 col-lg-6 col-12 form-group">
                                 <label>Status</label>
-                                <select class="select2">
+                                <!-- <select class="select2">
                                     <option value="0">Please Select</option>
                                     <option value="1">Paid</option>
                                     <option value="2">Due</option>
                                     <option value="3">Others</option>
-                                </select>
+                                </select> -->
+                                <app-select-drop-down 
+                                    [options]="status" 
+                                    [selectedValue]="selectedOption" 
+                                    (selectionChange)="handleAllSelectionChange($event)">
+                                </app-select-drop-down>
                             </div>
                             <div class="col-xl-3 col-lg-6 col-12 form-group">
                                 <label>Date</label>
-                                <input type="text" placeholder="dd/mm/yy" class="form-control air-datepicker" data-position="bottom right">
+                                <!-- <input type="text" placeholder="dd/mm/yy" class="form-control air-datepicker" data-position="bottom right"> -->
+                                <app-datepicker></app-datepicker>
                             </div>
                             <div class="col-12 form-group mg-t-8">
                                 <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>

@@ -41,6 +41,9 @@ import { TeacherPaymentComponent } from './components/teacher-payment/teacher-pa
 import { TransportComponent } from './components/transport/transport.component';
 import { UiTabComponent } from './components/ui-tab/ui-tab.component';
 import { UiWidgetComponent } from './components/ui-widget/ui-widget.component';
+import { PreloaderComponent } from './components/preloader/preloader.component';
+import { LayoutComponent } from './components/layout/layout.component';
+import { title } from 'process';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/index', pathMatch: 'full' },
@@ -85,6 +88,9 @@ export const routes: Routes = [
     { path: 'transport', component: TransportComponent, data: { title: 'Transport' }  },
     { path: 'ui-tab', component: UiTabComponent, data: { title: 'Ui Tab' }  },
     { path: 'ui-widget', component: UiWidgetComponent, data: { title: 'Ui Widget' }  },
+    { path: 'preloader', component: PreloaderComponent, data: { title: 'Preloader' }  },
+    { path: 'layout', component: LayoutComponent, data: {title: 'layout'}}
+    
 
 
 ];

@@ -1,0 +1,12 @@
+<!-- earning-line-chart.component.html -->
+
+<div class="earning-chart-wrap">
+  <canvas *ngIf="isBrowser" baseChart
+  [data]="earningsChartData"
+  [options]="lineChartOptions"
+  [type]="lineChartType">
+</canvas>
+</div>
+
+
+  

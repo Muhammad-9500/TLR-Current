@@ -1,0 +1,12 @@
+#preloader {
+  background: #ffffff url('/assets/img/preloader.gif') no-repeat scroll center center;
+  height: 100%;
+  left: 0;
+  overflow: visible;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999999;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}

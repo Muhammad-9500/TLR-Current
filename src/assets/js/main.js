@@ -4,37 +4,37 @@
   /*-------------------------------------
       Sidebar Toggle Menu
     -------------------------------------*/
-  $('.sidebar-toggle-view').on('click', '.sidebar-nav-item .nav-link', function (e) {
-    if (!$(this).parents('#wrapper').hasClass('sidebar-collapsed')) {
-      var animationSpeed = 300,
-        subMenuSelector = '.sub-group-menu',
-        $this = $(this),
-        checkElement = $this.next();
-      if (checkElement.is(subMenuSelector) && checkElement.is(':visible')) {
-        checkElement.slideUp(animationSpeed, function () {
-          checkElement.removeClass('menu-open');
-        });
-        checkElement.parent(".sidebar-nav-item").removeClass("active");
-      } else if ((checkElement.is(subMenuSelector)) && (!checkElement.is(':visible'))) {
-        var parent = $this.parents('ul').first();
-        var ul = parent.find('ul:visible').slideUp(animationSpeed);
-        ul.removeClass('menu-open');
-        var parent_li = $this.parent("li");
-        checkElement.slideDown(animationSpeed, function () {
-          checkElement.addClass('menu-open');
-          parent.find('.sidebar-nav-item.active').removeClass('active');
-          parent_li.addClass('active');
-        });
-      }
-      if (checkElement.is(subMenuSelector)) {
-        e.preventDefault();
-      }
-    } else {
-      if ($(this).attr('href') === "#") {
-        e.preventDefault();
-      }
-    }
-  });
+  // $('.sidebar-toggle-view').on('click', '.sidebar-nav-item .nav-link', function (e) {
+  //   if (!$(this).parents('#wrapper').hasClass('sidebar-collapsed')) {
+  //     var animationSpeed = 300,
+  //       subMenuSelector = '.sub-group-menu',
+  //       $this = $(this),
+  //       checkElement = $this.next();
+  //     if (checkElement.is(subMenuSelector) && checkElement.is(':visible')) {
+  //       checkElement.slideUp(animationSpeed, function () {
+  //         checkElement.removeClass('menu-open');
+  //       });
+  //       checkElement.parent(".sidebar-nav-item").removeClass("active");
+  //     } else if ((checkElement.is(subMenuSelector)) && (!checkElement.is(':visible'))) {
+  //       var parent = $this.parents('ul').first();
+  //       var ul = parent.find('ul:visible').slideUp(animationSpeed);
+  //       ul.removeClass('menu-open');
+  //       var parent_li = $this.parent("li");
+  //       checkElement.slideDown(animationSpeed, function () {
+  //         checkElement.addClass('menu-open');
+  //         parent.find('.sidebar-nav-item.active').removeClass('active');
+  //         parent_li.addClass('active');
+  //       });
+  //     }
+  //     if (checkElement.is(subMenuSelector)) {
+  //       e.preventDefault();
+  //     }
+  //   } else {
+  //     if ($(this).attr('href') === "#") {
+  //       e.preventDefault();
+  //     }
+  //   }
+  // });
 
   /*-------------------------------------
       Sidebar Menu Control
@@ -68,34 +68,34 @@
   /*-------------------------------------
       jquery Scollup activation code
     -------------------------------------*/
-  $("#preloader").fadeOut("slow", function () {
-    $(this).remove();
-  });
+  // $("#preloader").fadeOut("slow", function () {
+  //   $(this).remove();
+  // });
 
   $(function () {
     /*-------------------------------------
           Data Table init
       -------------------------------------*/
-    if ($.fn.DataTable !== undefined) {
-      $('.data-table').DataTable({
-        paging: true,
-        searching: false,
-        info: false,
-        lengthChange: false,
-        lengthMenu: [20, 50, 75, 100],
-        columnDefs: [{
-          targets: [0, -1], // column or columns numbers
-          orderable: false // set orderable for selected columns
-        }],
-      });
-    }
+    // if ($.fn.DataTable !== undefined) {
+    //   $('.data-table').DataTable({
+    //     paging: true,
+    //     searching: false,
+    //     info: false,
+    //     lengthChange: false,
+    //     lengthMenu: [20, 50, 75, 100],
+    //     columnDefs: [{
+    //       targets: [0, -1], // column or columns numbers
+    //       orderable: false // set orderable for selected columns
+    //     }],
+    //   });
+    // }
 
     /*-------------------------------------
           All Checkbox Checked
       -------------------------------------*/
-    $(".checkAll").on("click", function () {
-      $(this).parents('.table').find('input:checkbox').prop('checked', this.checked);
-    });
+    // $(".checkAll").on("click", function () {
+    //   $(this).parents('.table').find('input:checkbox').prop('checked', this.checked);
+    // });
 
     /*-------------------------------------
           Tooltip init
@@ -105,30 +105,30 @@
     /*-------------------------------------
           Select 2 Init
       -------------------------------------*/
-    if ($.fn.select2 !== undefined) {
-      $('.select2').select2({
-        width: '100%'
-      });
-    }
+    // if ($.fn.select2 !== undefined) {
+    //   $('.select2').select2({
+    //     width: '100%'
+    //   });
+    // }
 
     /*-------------------------------------
           Date Picker
       -------------------------------------*/
-    if ($.fn.datepicker !== undefined) {
-      $('.air-datepicker').datepicker({
-        language: {
-          days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-          daysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-          daysMin: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
-          months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-          monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-          today: 'Today',
-          clear: 'Clear',
-          dateFormat: 'dd/mm/yyyy',
-          firstDay: 0
-        }
-      });
-    }
+    // if ($.fn.datepicker !== undefined) {
+    //   $('.air-datepicker').datepicker({
+    //     language: {
+    //       days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    //       daysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+    //       daysMin: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+    //       months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+    //       monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    //       today: 'Today',
+    //       clear: 'Clear',
+    //       dateFormat: 'dd/mm/yyyy',
+    //       firstDay: 0
+    //     }
+    //   });
+    // }
 
     /*-------------------------------------
           Counter
@@ -144,35 +144,35 @@
     /*-------------------------------------
           Vector Map 
       -------------------------------------*/
-    if ($.fn.vectorMap !== undefined) {
-      $('#world-map').vectorMap({
-        map: 'world_mill',
-        zoomButtons: false,
-        backgroundColor: 'transparent',
+    // if ($.fn.vectorMap !== undefined) {
+    //   $('#world-map').vectorMap({
+    //     map: 'world_mill',
+    //     zoomButtons: false,
+    //     backgroundColor: 'transparent',
 
-        regionStyle: {
-          initial: {
-            fill: '#0070ba'
-          }
-        },
-        focusOn: {
-          x: 0,
-          y: 0,
-          scale: 1
-        },
-        series: {
-          regions: [{
-            values: {
-              CA: '#41dfce',
-              RU: '#f50056',
-              US: '#f50056',
-              IT: '#f50056',
-              AU: '#fbd348'
-            }
-          }]
-        }
-      });
-    }
+    //     regionStyle: {
+    //       initial: {
+    //         fill: '#0070ba'
+    //       }
+    //     },
+    //     focusOn: {
+    //       x: 0,
+    //       y: 0,
+    //       scale: 1
+    //     },
+    //     series: {
+    //       regions: [{
+    //         values: {
+    //           CA: '#41dfce',
+    //           RU: '#f50056',
+    //           US: '#f50056',
+    //           IT: '#f50056',
+    //           AU: '#fbd348'
+    //         }
+    //       }]
+    //     }
+    //   });
+    // }
 
     /*-------------------------------------
           Line Chart 
@@ -429,38 +429,38 @@
     /*-------------------------------------
           Calender initiate 
       -------------------------------------*/
-    if ($.fn.fullCalendar !== undefined) {
-      $('#fc-calender').fullCalendar({
-        header: {
-          center: 'basicDay,basicWeek,month',
-          left: 'title',
-          right: 'prev,next',
-        },
-        fixedWeekCount: false,
-        navLinks: true, // can click day/week names to navigate views
-        editable: true,
-        eventLimit: true, // allow "more" link when too many events
-        aspectRatio: 1.8,
-        events: [{
-            title: 'All Day Event',
-            start: '2019-04-01'
-          },
+    // if ($.fn.fullCalendar !== undefined) {
+    //   $('#fc-calender').fullCalendar({
+    //     header: {
+    //       center: 'basicDay,basicWeek,month',
+    //       left: 'title',
+    //       right: 'prev,next',
+    //     },
+    //     fixedWeekCount: false,
+    //     navLinks: true, // can click day/week names to navigate views
+    //     editable: true,
+    //     eventLimit: true, // allow "more" link when too many events
+    //     aspectRatio: 1.8,
+    //     events: [{
+    //         title: 'All Day Event',
+    //         start: '2019-04-01'
+    //       },
 
-          {
-            title: 'Meeting',
-            start: '2019-04-12T14:30:00'
-          },
-          {
-            title: 'Happy Hour',
-            start: '2019-04-15T17:30:00'
-          },
-          {
-            title: 'Birthday Party',
-            start: '2019-04-20T07:00:00'
-          }
-        ]
-      });
-    }
+    //       {
+    //         title: 'Meeting',
+    //         start: '2019-04-12T14:30:00'
+    //       },
+    //       {
+    //         title: 'Happy Hour',
+    //         start: '2019-04-15T17:30:00'
+    //       },
+    //       {
+    //         title: 'Birthday Party',
+    //         start: '2019-04-20T07:00:00'
+    //       }
+    //     ]
+    //   });
+    // }
   });
 
 })(jQuery);

@@ -1,0 +1,7 @@
+<div class=" custom-dropdown select">
+    <select [(ngModel)]="selectedValue" (change)="onSelectionChange($event)">
+      <option value="" selected>Please Select *</option>
+      <option *ngFor="let option of options">{{ option.value }}</option>
+    </select>
+  </div>
+  

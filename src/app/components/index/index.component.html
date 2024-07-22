@@ -1,20 +1,27 @@
 <!-- Preloader Start Here -->
-<div id="preloader"></div>
+<!-- <app-preloader ngSKipHydration></app-preloader> -->
+<app-preloader></app-preloader>
 <!-- Preloader End Here -->
 <div id="wrapper" class="wrapper bg-ash">
     <!-- Header Menu Area Start Here -->
-    <app-header-menu></app-header-menu>
+    <app-header-menu ></app-header-menu>
     <!-- Header Menu Area End Here -->
 
     <!-- Page Area Start Here -->
     <div class="dashboard-page-one">
         <!-- Sidebar Area Start Here -->
-        <app-sidebar></app-sidebar>
+        <app-sidebar ></app-sidebar>
         <!-- Sidebar Area End Here -->
         <div class="dashboard-content-one">
             <!-- Breadcubs Area Start Here -->
             <div class="breadcrumbs-area">
-                <h3>Admin Dashboard</h3>
+                <h3>Admin Dashboard</h3>  <button id='gfg' type="button" 
+                class="btn btn-danger" 
+                [disabled]='true' 
+                placement="left" 
+                ngbTooltip="GeeksforGeeks"> 
+                left 
+            </button> 
                 <ul>
                     <li>
                         <a routerLink="/" >Home</a>
@@ -131,18 +138,21 @@
                                     </div>
                                 </div>
                                 <div class="dropdown">
-                                    <a class="date-dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                                        aria-expanded="false">Jan 20, 2019</a>
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <a class="dropdown-item" href="#">Jan 20, 2019</a>
-                                        <a class="dropdown-item" href="#">Jan 20, 2021</a>
-                                        <a class="dropdown-item" href="#">Jan 20, 2020</a>
-                                    </div>
+                                    <mat-button-toggle #toggleBtn class="date-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                                        {{ selectedDate  }}
+                                    </mat-button-toggle>
+                                    <mat-menu #menu="matMenu" [overlapTrigger]="false">
+                                        <button mat-menu-item *ngFor="let date of dateOptions" (click)="selectDate(date)">
+                                            {{ date  }}
+                                        </button>
+                                    </mat-menu>
                                 </div>
+                                
                             </div>
-                            <div class="earning-chart-wrap">
-                                <canvas id="earning-line-chart" width="660" height="320"></canvas>
-                            </div>
+                            
+                                <!-- <canvas id="earning-line-chart" width="660" height="320"></canvas> -->
+                            <!-- <app-earning-line-chart></app-earning-line-chart> -->
+                            <app-linechart></app-linechart>
                         </div>
                     </div>
                 </div>
@@ -246,7 +256,7 @@
                                 </div>
                             </div>
                             <div class="calender-wrap">
-                                <div id="fc-calender" class="fc-calender"></div>
+                                <app-calendar></app-calendar>
                             </div>
                         </div>
                     </div>
@@ -275,7 +285,7 @@
                             <h6 class="traffic-title">Unique Visitors</h6>
                             <div class="traffic-number">2,590</div>
                             <div class="traffic-bar">
-                                <div class="direct" data-toggle="tooltip" data-placement="top" title="Direct">
+                                <div class="direct"  data-toggle="tooltip" data-placement="top" title="Direct">
                                 </div>
                                 <div class="search" data-toggle="tooltip" data-placement="top" title="Search">
                                 </div>
@@ -284,6 +294,24 @@
                                 <div class="social" data-toggle="tooltip" data-placement="top" title="Social">
                                 </div>
                             </div>
+                            <!-- <div class="traffic-bar">
+                                <ngb-tooltip placement="top" title="Direct">
+                                  <div class="direct" ngbTooltip></div>
+                                </ngb-tooltip>
+                              
+                                <ngb-tooltip placement="top" title="Search">
+                                  <div class="search" ngbTooltip></div>
+                                </ngb-tooltip>
+                              
+                                <ngb-tooltip placement="top" title="Referrals">
+                                  <div class="referrals" ngbTooltip></div>
+                                </ngb-tooltip>
+                              
+                                <ngb-tooltip placement="top" title="Social">
+                                  <div class="social" ngbTooltip></div>
+                                </ngb-tooltip>
+                              </div> -->
+                              
                             <div class="traffic-table table-responsive">
                                 <table class="table">
                                     <tbody>
