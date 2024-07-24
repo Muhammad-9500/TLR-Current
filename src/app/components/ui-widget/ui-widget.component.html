@@ -143,9 +143,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="earning-chart-wrap">
+                            <!-- <div class="earning-chart-wrap">
                                 <canvas id="earning-line-chart" width="660" height="320"></canvas>
-                            </div>
+                            </div> -->
+                            <app-chart [chartType]="'line'" [chartData]="lineChartData" [chartOptions]="lineChartOptions"></app-chart>
                         </div>
                     </div>
                 </div>
@@ -185,9 +186,10 @@
                                     <div class="expense-amount"><span>$</span> 8,000</div>
                                 </div>
                             </div>
-                            <div class="expense-chart-wrap">
+                            <!-- <div class="expense-chart-wrap">
                                 <canvas id="expense-bar-chart" width="100" height="300"></canvas>
-                            </div>
+                            </div> -->
+                            <app-chart [chartType]="'bar'" [chartData]="barChartData" [chartOptions]="barChartOptions"></app-chart>
                         </div>
                     </div>
                 </div>
@@ -213,9 +215,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="doughnut-chart-wrap">
+                            <!-- <div class="doughnut-chart-wrap">
                                 <canvas id="student-doughnut-chart" width="100" height="300"></canvas>
-                            </div>
+                            </div> -->
+                            <app-chart [chartType]="'doughnut'" [chartData]="doughnutChartData" [chartOptions]="doughnutChartOptions"></app-chart>
+                            
                             <div class="student-report">
                                 <div class="student-count pseudo-bg-blue">
                                     <h4 class="item-title">Female Students</h4>
@@ -223,7 +227,7 @@
                                 </div>
                                 <div class="student-count pseudo-bg-yellow">
                                     <h4 class="item-title">Male Students</h4>
-                                    <div class="item-number">1,05,000</div>
+                                    <div class="item-number">105,000</div>
                                 </div>
                             </div>
                         </div>
@@ -252,7 +256,7 @@
                                 </div>
                             </div>
                             <div class="calender-wrap">
-                                <app-calendar></app-calendar>>
+                                <!-- <app-calendar></app-calendar>> -->
                             </div>
                         </div>
                     </div>

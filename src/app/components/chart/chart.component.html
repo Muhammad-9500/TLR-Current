@@ -1,0 +1,38 @@
+<div class="chart-wrap">
+  <div id="earning-line-chart">
+    <ngx-charts-line-chart *ngIf="chartType === 'line'"
+    [scheme]="lineChartColorScheme"
+    [results]="chartData"
+    [legend]="chartOptions.legend"
+    [xAxis]="chartOptions.xAxis"
+    [yAxis]="chartOptions.yAxis"
+    [autoScale]="chartOptions.autoScale"
+    [showGridLines]="chartOptions.showGridLines"
+    [animations]="chartOptions.animations"
+    [timeline]="chartOptions.timeline"
+    [curve]="curve">
+    </ngx-charts-line-chart>
+  </div>
+    
+  <div class="expense-chart-wrap">
+    <ngx-charts-bar-vertical *ngIf="chartType === 'bar'"
+      [scheme]="barChartColorScheme"
+      [results]="chartData"
+      [legend]="chartOptions.legend"
+      [xAxis]="chartOptions.xAxis"
+      [yAxis]="chartOptions.yAxis"
+      [showGridLines]="chartOptions.showGridLines"
+      [animations]="chartOptions.animations">
+    </ngx-charts-bar-vertical>
+  </div>
+   
+  <div class="doughnut-chart-wrap">
+    <ngx-charts-pie-chart *ngIf="chartType === 'doughnut'"
+      [scheme]="doughnutChartColorScheme"
+      [results]="chartData"
+      [legend]="chartOptions.legend"
+      [animations]="chartOptions.animations"
+      [doughnut]="chartOptions.doughnut">
+    </ngx-charts-pie-chart>
+  </div>
+</div>
